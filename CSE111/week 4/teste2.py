@@ -1,10 +1,3 @@
-
-# Exceeding the Requirements #
-# I add in the list, the number of protons witch element.
-# I copyed and past the rows from file's prove and includ the parameters in main()
-
-
-
 from formula import parse_formula
 
 def make_periodic_table():
@@ -118,7 +111,7 @@ def sum_protons(symbol_quantity_list, periodic_table_dict):
     all the elements listed in symbol_quantity_list."""
     total_protons = 0
     for symbol, quantity in symbol_quantity_list:
-        atomic_number = periodic_table_dict[symbol][2]  # get the atomic number
+        atomic_number = periodic_table_dict[symbol][2]  # Obtém o número atômico
         total_protons += atomic_number * quantity
     return total_protons
 
@@ -130,6 +123,7 @@ def get_formula_name(formula, known_molecules_dict):
     return known_molecules_dict.get(formula, "unknown compound")
 
 def main():
+    # Dicionário de moléculas conhecidas
     known_molecules_dict = {
         "Al2O3": "aluminum oxide",
         "CH3OH": "methanol",
@@ -149,28 +143,35 @@ def main():
         "H2O": "water"
     }
     
+    # Obtém a fórmula química do usuário
     formula = input("Enter the chemical formula of the substance: ")
     
+    # Obtém a massa da amostra do usuário
     sample_mass = float(input("Enter the mass of the sample in grams: "))
     
-    # Creat the pediodic table
+    # Cria a tabela periódica
     periodic_table = make_periodic_table()
     
+    # Converte a fórmula química em uma lista de símbolos e quantidades
     symbol_quantity_list = parse_formula(formula, periodic_table)
     
+    # Calcula a massa molar
     molar_mass = compute_molar_mass(symbol_quantity_list, periodic_table)
     
-    number_of_moles = sample_mass / molar_mass # calcule
+    # Calcula o número de moles
+    number_of_moles = sample_mass / molar_mass
     
+    # Obtém o nome da fórmula se for conhecida
     formula_name = get_formula_name(formula, known_molecules_dict)
     
+    # Calcula o número total de prótons no composto
     total_protons = sum_protons(symbol_quantity_list, periodic_table)
     
-    # print the results of the prove and "Exceeding the Requirements"
+    # Exibe os resultados
     print(f"Compound name: {formula_name}")
     print(f"Molar mass: {molar_mass:.5f} grams/mole")
     print(f"Number of moles: {number_of_moles:.5f} moles")
-    print(f"Total number of protons: {total_protons}") # Exceeding Requirements
+    print(f"Total number of protons: {total_protons}")
 
 if __name__ == "__main__":
     main()
