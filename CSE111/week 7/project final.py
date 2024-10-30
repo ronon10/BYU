@@ -110,7 +110,7 @@ def main():
 
     if inventory:
         print("\n1. Registering a sale...")
-        update_inventory(inventory, 'apple', 5)
+        update_inventory(inventory, 'apple', 15)
         register_sale(inventory, 'apple', 3, sales_file)
 
         print("\n2. Updating inventory...")
