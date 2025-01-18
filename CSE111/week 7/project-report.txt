@@ -1,0 +1,33 @@
+
+## Below are the answers ##
+
+
+1. Answers
+    After I sent my project proposal to the professor, I started to put together on my computer a structure of what I would need to make the program work. 
+I realized later that it wouldn't be as simple as I imagined, so it was difficult to start this project. I asked my friends at work for help, 
+each of them gave their opinion and helped me put together the functions, I also watched several videos on YouTube from a teacher who teaches Python from 
+beginner to advanced level, I also got some tips through of this course and I set up the functions and printed the results. Then came a few more ideas than I could put together.
+The program is for a small supermarket that helps with the entry and exit of products, it works like this:
+There are two files, the one that has all the products registered and the other that records the entire sale marking the day and time of each sale. This sales file is updated every time a sale appears and is recorded in the file.
+First, the program reads the product file, records the sale, updates the stock and saves it, and also shows a plan to restock the products that were sold.
+
+
+            Time Spent
+   Date       (hours)   Description of Work
+----------  ----------  -------------------------
+2024-10-21      3       I analyzed a structure on the internet that could help me in building my project and started creating some functions
+2024-10-22      1       I continued analyzing the structure in my notebook to know how I could put together the program 
+2024-10-25      2       I talked to some colleagues at work who have greater knowledge and helped me create the function calls
+2024-10-28      2       After I got home from work, I tried to run the functions separately, watched videos on YouTube and took some video lessons from a separate course
+2024-10-29      3       I thought it would be late in delivery, so I asked my friends at work for help again, 
+                        they helped me a lot to complete the program but it was still giving errors, the 'products' file was being created automatically
+                        every time I ran the code, I deleted the file and it was created again automatically. 
+                        I needed to remove this part of the program where it was created if it didn't exist and I put an error message saying that if it didn't exist, 
+                        the program couldn't find the file.
+2024-10-31      4       I woke up early to correct the missing errors, I had to delete the .csv files and create them again, I don't know if there was a bug or 
+                        some character that I wasn't seeing because the program wasn't finding the content inside the files. I watched a few more videos on YouTube 
+                        and finished the program.
+
+
+
+

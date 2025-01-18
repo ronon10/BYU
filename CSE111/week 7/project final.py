@@ -2,7 +2,7 @@ import csv
 from datetime import datetime
 import os
 
-# Carregar inventário
+# load inventory files
 def load_inventory(file_path):
     inventory = []
     if not os.path.exists(file_path):
@@ -14,7 +14,7 @@ def load_inventory(file_path):
             reader = csv.DictReader(file)
             print("Headers in CSV:", reader.fieldnames)
             for row in reader:
-                if any(row.values()):  # Ignorar linhas em branco
+                if any(row.values()):  # ignore blank lines
                     inventory.append({
                         'product': row['product'],
                         'price': float(row['price']),
@@ -28,7 +28,7 @@ def load_inventory(file_path):
         print(f"An error occurred: {e}")
     return inventory
 
-# Registrar venda
+# registry sales
 def register_sale(inventory, product_name, quantity, sales_file='sales.csv'):
     for product in inventory:
         if product['product'] == product_name:
@@ -40,7 +40,7 @@ def register_sale(inventory, product_name, quantity, sales_file='sales.csv'):
                 # Registrar venda
                 with open(sales_file, mode='a', newline='', encoding='utf-8') as file:
                     writer = csv.writer(file)
-                    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S") # real date and time
                     writer.writerow([product_name, quantity, product['price'], timestamp])
                     print(f"Sale recorded: {product_name}, Quantity: {quantity}, Price: {product['price']}, Date: {timestamp}")
             else:
@@ -48,7 +48,7 @@ def register_sale(inventory, product_name, quantity, sales_file='sales.csv'):
             return
     print(f"Product {product_name} not found in inventory.")
 
-# Atualizar inventário
+# update inventory
 def update_inventory(inventory, product_name, quantity):
     for product in inventory:
         if product['product'] == product_name:
@@ -57,7 +57,7 @@ def update_inventory(inventory, product_name, quantity):
             return
     print(f"Product {product_name} not found in inventory.")
 
-# Salvar inventário
+# save inventory
 def save_inventory(file_path, inventory):
     if not inventory:
         print("No inventory data to save.")
@@ -74,14 +74,14 @@ def save_inventory(file_path, inventory):
     except Exception as e:
         print(f"An error occurred while saving inventory: {e}")
 
-# Gerar relatório de vendas
+# generate sales report
 def generate_sales_report(inventory):
     report = "Sales Report:\n"
     for product in inventory:
         report += f"Product: {product['product']}, Stock remaining: {product['stock']}, Sales: {product['sales']}\n"
     return report
 
-# Analisar vendas
+# check sales
 def analyze_sales(inventory):
     high_performance = []
     low_performance = []
@@ -92,7 +92,7 @@ def analyze_sales(inventory):
             high_performance.append(product['product'])
     return high_performance, low_performance
 
-# Prever reabastecimento
+# predict stocking
 def predict_restocking(inventory):
     to_restock = []
     for product in inventory:
@@ -100,12 +100,12 @@ def predict_restocking(inventory):
             to_restock.append(product['product'])
     return to_restock
 
-# Função principal do programa
+# main function of the program
 def main():
     inventory_file = 'C:/Users/realves/Documents/BYU/CSE111/week 7/products.csv'
     sales_file = 'C:/Users/realves/Documents/BYU/CSE111/week 7/sales.csv'
 
-    # Carregar inventário
+    # pload inventory
     inventory = load_inventory(inventory_file)
 
     if inventory:
@@ -140,12 +140,12 @@ if __name__ == "__main__":
 print()
 print()
 
-# Verificar se o arquivo de produtos foi encontrado
+# check if the product archive was found
 print("File found?", os.path.exists('C:/Users/realves/Documents/BYU/CSE111/week 7/products.csv'))
 print()
 
-# Exibir todo o conteúdo do arquivo de produtos
+# view all product archive content
 with open('C:/Users/realves/Documents/BYU/CSE111/week 7/products.csv', mode='r', encoding='utf-8') as file:
     print("File content:")
     for line in file:
-        print(repr(line))  # Mostrar todas as linhas
+        print(repr(line))  # show all the lines of products file

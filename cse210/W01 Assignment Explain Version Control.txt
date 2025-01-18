@@ -1,0 +1,10 @@
+What is version control and why is it important?
+
+Is a system that stores records made in a file over time, every time a file is modified by one person or several people, it is possible to track the changes and who made those changes. You can also have a history of what was changed, if it is group work, this work becomes more efficient.
+It's a great way to organize group work, especially on large projects.
+An example would be if I am working on a project and I need to be absent for some reason, but that project cannot stop, so someone else can have access to the file where I left off and continue, it is also possible for more than one person to work on the same project at the same time. 
+Using the command: git log, we can check several changes in the file and do a small audit as well.
+
+
+
+Renan de Freitas Alves
