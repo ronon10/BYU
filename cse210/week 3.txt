@@ -1,0 +1,3 @@
+Encapsulation is one of the fundamental principles of object-oriented programming, it is basically hiding the details of the code so as not to make a bad interaction with the end user and showing only what is necessary for the user.
+A very good benefit is security, it protects the internal code when hiding. Also, clean code allows changes to internal details without affecting other parts of the code.
+An example of encapsulation application is in bank account management, where the balance is protected and the person can only withdraw what is in the balance without taking out more.
