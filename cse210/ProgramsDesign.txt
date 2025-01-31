@@ -1,0 +1,141 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+// This class represent comentaries
+class Comment
+{
+    public string Author { get; }
+    public string Text { get; }
+
+    public Comment(string author, string text)
+    {
+        Author = author;
+        Text = text;
+    }
+
+    public override string ToString() => $"{Author}: {Text}";
+}
+
+// Here is represent a vídeo in youtube
+class Video
+{
+    public string Title { get; }
+    public string Author { get; }
+    public int Duration { get; }
+    private List<Comment> Comments { get; } = new List<Comment>();
+
+    public Video(string title, string author, int duration)
+    {
+        Title = title;
+        Author = author;
+        Duration = duration;
+    }
+
+    public void AddComment(Comment comment) => Comments.Add(comment);
+    public int GetCommentCount() => Comments.Count;
+    public void DisplayInfo()
+    {
+        Console.WriteLine($"Título: {Title}\nAutor: {Author}\nDuração: {Duration} segundos");
+        Console.WriteLine($"Número de Comentários: {GetCommentCount()}");
+        Console.WriteLine("Comentários:");
+        foreach (var comment in Comments)
+        {
+            Console.WriteLine($"  - {comment}");
+        }
+        Console.WriteLine(new string('-', 40));
+    }
+}
+
+// Here in this class represent a comentarie
+class Customer
+{
+    public string Name { get; }
+    public string Address { get; }
+
+    public Customer(string name, string address)
+    {
+        Name = name;
+        Address = address;
+    }
+}
+
+// Here represent a product with relationship the video
+class Course
+{
+    public string Name { get; }
+    public decimal Price { get; }
+    public List<Video> AssociatedVideos { get; } = new List<Video>();
+
+    public Course(string name, decimal price, List<Video> videos)
+    {
+        Name = name;
+        Price = price;
+        AssociatedVideos = videos;
+    }
+
+    public void DisplayCourseInfo()
+    {
+        Console.WriteLine($"Curso: {Name} - Preço: R${Price}");
+        Console.WriteLine("Baseado nos vídeos:");
+        foreach (var video in AssociatedVideos)
+        {
+            video.DisplayInfo();
+        }
+    }
+}
+
+// Here represent a ask for curse
+class Order
+{
+    public Customer Customer { get; }
+    private List<Course> Courses { get; } = new List<Course>();
+
+    public Order(Customer customer)
+    {
+        Customer = customer;
+    }
+
+    public void AddCourse(Course course) => Courses.Add(course);
+    public decimal GetTotalPrice() => Courses.Sum(c => c.Price);
+    
+    public void DisplayOrderSummary()
+    {
+        Console.WriteLine($"Pedido para: {Customer.Name}, Endereço: {Customer.Address}");
+        Console.WriteLine("Cursos adquiridos:");
+        foreach (var course in Courses)
+        {
+            Console.WriteLine($"- {course.Name} - R${course.Price}");
+        }
+        Console.WriteLine($"Total: R${GetTotalPrice()}");
+        Console.WriteLine(new string('=', 40));
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        // making videos
+        Video video1 = new Video("Aprendendo C#", "Canal C#", 600);
+        video1.AddComment(new Comment("Mohamed Sala", "Ótima explicação!"));
+        video1.AddComment(new Comment("Sharon", "Muito bom, obrigado!"));
+
+        Video video2 = new Video("POO em C#", "Dev Tutorial", 750);
+        video2.AddComment(new Comment("Cristiano Ronaldo", "Explicação clara."));
+        video2.AddComment(new Comment("Messi", "Muito útil, obrigado!"));
+
+        List<Video> curso1Videos = new List<Video> { video1, video2 };
+        Course curso1 = new Course("Curso Completo de C#", new decimal(120.0), curso1Videos);
+        Course curso2 = new Course("POO Avançado em C#", new decimal(150.0), new List<Video> { video2 });
+        
+        // making custumer and video
+        Customer cliente = new Customer("Neymar", "Rua das Flores, 123");
+        Order pedido = new Order(cliente);
+        pedido.AddCourse(curso1);
+        pedido.AddCourse(curso2);
+        
+        // show details
+        pedido.DisplayOrderSummary();
+    }
+}
