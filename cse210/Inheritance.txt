@@ -1,0 +1,1 @@
+It is a fundamental principle of object-oriented programming, it allows a class to inherit properties from other classes. The code is cleaner, with less repeated information and improved organization. The main objective is that it allows configuration through hierarchy.
