@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Comparison</title>
+    <link rel="stylesheet" href="css/finalproject.css">
+    <script defer src="js/finalproject.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">Car Compare</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="models.html">Car Models</a></li>
+                <li><a href="comparison.html">Comparison</a></li>
+                <li><a href="tips.html">Buying Tips</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="comparison">
+            <h1>Car Comparison</h1>
+            <p>Choose the cars you want to compare. Compare their features side by side to make an informed decision!</p>
+
+            <div class="comparison-cars">
+                <div class="comparison-card">
+                    <h2>Model 1</h2>
+                    <img src="images/car1.webp" alt="Car Model 1">
+                    <p><strong>Price:</strong> $80,000</p>
+                    <p><strong>Engine:</strong> 2.0L, 150 HP</p>
+                    <p><strong>Fuel Efficiency:</strong> 12 km/l</p>
+                    <button class="button add-to-favorites" data-car-name="Model 1">Add to Favorites</button>
+                </div>
+
+                <div class="comparison-card">
+                    <h2>Model 2</h2>
+                    <img src="images/car2.webp" alt="Car Model 2">
+                    <p><strong>Price:</strong> $100,000</p>
+                    <p><strong>Engine:</strong> 2.5L, 180 HP</p>
+                    <p><strong>Fuel Efficiency:</strong> 10 km/l</p>
+                    <button class="button add-to-favorites" data-car-name="Model 2">Add to Favorites</button>
+                </div>
+            </div>
+            
+            <section class="comparison-result">
+                <h3>Comparison Results</h3>
+                <p>Select the cars you wish to compare to view detailed specifications here.</p>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 <span id="author">Renan de Freitas Alves</span> | SP-Brazil</p>
+        <p>Last Modification: <span id="last-modified"></span></p>
+    </footer>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", function() {
+            const lastModified = document.lastModified;
+            document.getElementById("last-modified").textContent = lastModified;  // Display it in the <span> with id 'last-modified'
+        });
+    </script>
+</body>
+</html>

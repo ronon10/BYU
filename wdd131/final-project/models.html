@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Models</title>
+    <link rel="stylesheet" href="css/finalproject.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="models.html">Models</a></li>
+                <li><a href="comparison.html">Comparison</a></li>
+                <li><a href="tips.html">Buying Tips</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="models-list">
+            <h1>Car Models</h1>
+
+            <div class="model-card">
+                <img src="images/car2.webp" alt="Car Model 1">
+                <h2>Model 1</h2>
+                <p><strong>Price:</strong> $16,000</p>
+                <p><strong>Features:</strong> 2.0 Engine, 150 HP, 12 km/l</p>
+                <a href="comparison.html" class="button">Compare</a>
+                <button class="button add-to-favorites" data-car-name="Model 1">Add to Favorites</button>
+            </div>
+            
+            <div class="model-card">
+                <img src="images/car3.webp" alt="Car Model 2">
+                <h2>Model 2</h2>
+                <p><strong>Price:</strong> $20,000</p>
+                <p><strong>Features:</strong> 2.5 Engine, 180 HP, 10 km/l</p>
+                <a href="comparison.html" class="button">Compare</a>
+                <button class="button add-to-favorites" data-car-name="Model 2">Add to Favorites</button>
+            </div>
+            
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 <span id="author">Renan de Freitas Alves</span> | SP-Brazil</p>
+        <p>Last Modification: <span id="last-modified"></span></p>
+    </footer>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", function() {
+            const lastModified = document.lastModified;
+            document.getElementById("last-modified").textContent = lastModified;  // Display it in the <span> with id 'last-modified'
+        });
+    </script>
+
+    <script src="js/finalproject.js"></script>
+</body>
+</html>

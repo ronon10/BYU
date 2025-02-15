@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buying Tips</title>
+    <link rel="stylesheet" href="css/finalproject.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="models.html">Models</a></li>
+                <li><a href="comparison.html">Comparison</a></li>
+                <li><a href="tips.html">Buying Tips</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="tips">
+            <h1>Car Buying Tips</h1>
+            <ul>
+                <li><strong>Do thorough research:</strong> Before buying, research the cars you like and compare prices.</li>
+                <li><strong>Consider fuel consumption:</strong> More fuel-efficient cars can save you money in the long run.</li>
+                <li><strong>Check the car's history:</strong> Make sure the car doesn’t have mechanical issues or has been involved in accidents.</li>
+                <li><strong>Think about the future:</strong> Consider not only the immediate cost but also future maintenance and depreciation.</li>
+            </ul>
+        </section>
+        <section class="favorites">
+            <div id="favorites-list"></div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2025 <span id="author">Renan de Freitas Alves</span> | SP-Brazil</p>
+        <p>Last Modification: <span id="last-modified"></span></p>
+    </footer>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", function() {
+            const lastModified = document.lastModified;
+            document.getElementById("last-modified").textContent = lastModified;  // Display it in the <span> with id 'last-modified'
+        });
+    </script>
+
+    <script src="js/finalproject.js"></script>
+</body>
+</html>

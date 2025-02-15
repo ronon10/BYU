@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Website</title>
+    <link rel="stylesheet" href="css/finalproject.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="models.html">Models</a></li>
+                <li><a href="comparison.html">Comparison</a></li>
+                <li><a href="tips.html">Buying Tips</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img src="images/car1.webp" alt="Featured Car">
+            <h1>Welcome to the World of Cars!</h1>
+            <p>Explore the best car models and find the one that suits you best.</p>
+        </section>
+
+        <section class="intro">
+            <h2>Popular Models</h2>
+            <p>Check out our most popular cars and their features.</p>
+            <a href="models.html" class="button">See Models</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 <span id="author">Renan de Freitas Alves</span> | SP-Brazil</p>
+        <p>Last Modification: <span id="last-modified"></span></p>
+    </footer>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", function() {
+            const lastModified = document.lastModified;
+            document.getElementById("last-modified").textContent = lastModified;  // Display it in the <span> with id 'last-modified'
+        });
+    </script>
+</body>
+</html>
